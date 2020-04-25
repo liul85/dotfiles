@@ -8,7 +8,7 @@ function cp_dotfiles() {
         --exclude "bootstrap.sh" \
         --exclude "README.md" \
         -avh --no-perms . ~;
-    source ~/.bash_profile;
+    source ~/.zshrc;
 }
 
 read -p "Copy all dotfiles to home folder? (y/n) " -n 1;
