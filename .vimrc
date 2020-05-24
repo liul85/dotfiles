@@ -1,3 +1,23 @@
+syntax on
+
+set noerrorbells
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set number
+set nowrap
+set smartcase
+set noswapfile
+set nobackup
+set incsearch
+
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+
+let mapleader=","
 " vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
@@ -7,22 +27,20 @@ Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'sainnhe/edge'
+Plug 'pangloss/vim-javascript'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " key binding
 nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <C-b> :Buffers<CR>
 nnoremap <silent> <C-e> :NERDTreeToggle<CR>
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
 
-set number
 filetype plugin indent on
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
-set expandtab
-syntax on
 
 set autoindent
 set encoding=utf-8
@@ -34,4 +52,4 @@ set background=dark
 let g:edge_style = 'neon'
 let g:edge_disable_italic_comment = 1
 
-colorscheme edge
+colorscheme gruvbox
