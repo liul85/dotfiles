@@ -7,13 +7,14 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set number
-set nowrap
+set wrap
+set linebreak
 set smartcase
 set noswapfile
 set nobackup
 set incsearch
 
-set colorcolumn=80
+" set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 
@@ -31,6 +32,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'szw/vim-tags'
+Plug 'hashivim/vim-terraform'
 call plug#end()
 
 " key binding
@@ -53,3 +57,4 @@ let g:edge_style = 'neon'
 let g:edge_disable_italic_comment = 1
 
 colorscheme gruvbox
+set guifont=Menlo:h14
