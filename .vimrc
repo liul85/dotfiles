@@ -13,6 +13,7 @@ set smartcase
 set noswapfile
 set nobackup
 set incsearch
+set autowrite
 
 " set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
@@ -42,6 +43,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'szw/vim-tags'
 Plug 'hashivim/vim-terraform'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 " key binding
@@ -50,6 +52,26 @@ nnoremap <silent> <C-b> :Buffers<CR>
 nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
+
+" vim-go
+map <C-n> :cnext<CR>
+map <C-p> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+let g:go_highlight_types = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+let g:go_auto_sameids = 1
 
 filetype plugin indent on
 
@@ -64,4 +86,4 @@ let g:edge_style = 'neon'
 let g:edge_disable_italic_comment = 1
 
 colorscheme gruvbox
-set guifont=Menlo:h14
+set guifont=Noto\ Sans\ Mono:h15
