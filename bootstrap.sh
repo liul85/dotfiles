@@ -1,20 +1,29 @@
 #!/usr/bin/env bash
+set -e
 
-cd "$(dirname "${BASH_SOURCE}")";
+echo "Installing ohmyzsh"
+sudo dnf -y install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-function cp_dotfiles() {
-    echo "Copying dotfiles to home folder......"
-    rsync --exclude ".git/" \
-        --exclude "bootstrap.sh" \
-        --exclude "README.md" \
-        -avh --no-perms . ~;
-    source ~/.zshrc;
-}
 
-read -p "Copy all dotfiles to home folder? (y/n) " -n 1;
-echo ""
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    cp_dotfiles;
-fi;
+echo "Installing fzf"
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
-unset cp_dotfiles;
+# link all dotfiles
+all_files=$(ls -al | awk -F " " '{print $9}' | grep -i "^\.[A-Za-z].*" | grep -vi "^.git$")
+echo $all_files
+
+for f in $all_files
+do
+    echo "creating link for $f"
+    ln -s $(pwd)/$f ~/$f
+done
+
+for f in $all_files
+do
+    ls -al /home/$USER/$f
+done
+
+echo "done!"
+
