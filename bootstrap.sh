@@ -22,9 +22,9 @@ echo "Installing oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 
-#echo "Installing fzf"
-#git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-#~/.fzf/install
+echo "Installing fzf"
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 # link all dotfiles
 all_files=$(ls -al | awk -F " " '{print $9}' | grep -i "^\.[A-Za-z].*" | grep -vi "^.git$")
