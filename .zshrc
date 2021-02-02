@@ -104,3 +104,7 @@ source $ZSH/oh-my-zsh.sh
 
 # alias
 source ~/.alias
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/liangliu/.sdkman"
+[[ -s "/home/liangliu/.sdkman/bin/sdkman-init.sh" ]] && source "/home/liangliu/.sdkman/bin/sdkman-init.sh"
