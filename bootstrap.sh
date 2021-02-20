@@ -33,7 +33,7 @@ echo $all_files
 for f in $all_files
 do
     echo "creating link for $f"
-    ln -s $(pwd)/$f ~/$f
+    ln -sf $(pwd)/$f ~/$f
 done
 
 for f in $all_files
