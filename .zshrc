@@ -120,3 +120,6 @@ if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-clou
 # starship
 export STARSHIP_CONFIG=~/.starship
 eval "$(starship init zsh)"
+
+# golang
+[[ -s "$HOME/.gvm/scripts/gvm"  ]] && source "$HOME/.gvm/scripts/gvm"

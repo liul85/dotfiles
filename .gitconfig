@@ -10,3 +10,5 @@
 	pr = pull --rebase
 	ci = commit
 	co = checkout
+[init]
+	defaultBranch = master
