@@ -46,6 +46,10 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'szw/vim-tags'
 Plug 'hashivim/vim-terraform'
 Plug 'jiangmiao/auto-pairs'
+Plug 'wakatime/vim-wakatime'
+Plug 'vim-syntastic/syntastic'
+Plug 'preservim/tagbar'
+Plug 'nathangrigg/vim-beancount'
 call plug#end()
 
 " key binding
@@ -92,6 +96,7 @@ set guifont=Noto\ Sans\ Mono:h15
 
 " rust
 let g:rustfmt_autosave = 1
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
