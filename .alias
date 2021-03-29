@@ -4,3 +4,7 @@ alias dps="docker ps"
 alias tn='tmux new-session -s'
 alias tl='tmux ls'
 alias ta='tmux attach-session -t'
+alias mcv='mvn clean verify'
+alias mci='mvn clean install'
+alias mcc='mvn clean compile'
+alias mct='mvn clean test'

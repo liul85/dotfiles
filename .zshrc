@@ -111,6 +111,10 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
 
+# starship
+eval "$(starship init zsh)"
+export PATH="/usr/local/opt/terraform@0.13/bin:$PATH"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '$HOME/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/google-cloud-sdk/path.zsh.inc'; fi
 
@@ -123,3 +127,11 @@ eval "$(starship init zsh)"
 
 # golang
 [[ -s "$HOME/.gvm/scripts/gvm"  ]] && source "$HOME/.gvm/scripts/gvm"
+
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
+# git with GPG
+export GPG_TTY=$(tty)
+
+#gvm
+source $HOME/.gvm/scripts/gvm

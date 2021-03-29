@@ -1,6 +1,7 @@
 [user]
-	email = liul85@gmail.com
-	name = liul85
+	email = liang.liu4@auspost.com.au
+	name = Liang Liu
+	signingkey = 160034B0219407A4
 [core]
 	editor = vim
 [merge]
@@ -12,3 +13,7 @@
 	co = checkout
 [init]
 	defaultBranch = master
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = false
