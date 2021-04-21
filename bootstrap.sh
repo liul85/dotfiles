@@ -36,6 +36,10 @@ do
     ln -sf $(pwd)/$f ~/$f
 done
 
+if [[ $os_type == "Linux" ]]; then
+    ln -sf $(pwd)/.fonts.conf ~/.fonts.conf
+fi
+
 for f in $all_files
 do
     ls -al ~/$f
