@@ -18,8 +18,8 @@ set autowrite
 " set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
+let mapleader="\<Space>"
 
-let mapleader=","
 " vim-plug
 " check vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -58,6 +58,14 @@ nnoremap <silent> <C-b> :Buffers<CR>
 nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
+nnoremap <Leader>w :w<CR>
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+nnoremap <Leader><Leader> V
 
 " vim-go
 map <C-n> :cnext<CR>
