@@ -135,3 +135,5 @@ export GPG_TTY=$(tty)
 
 #gvm
 source $HOME/.gvm/scripts/gvm
+
+export TERMINAL=alacritty

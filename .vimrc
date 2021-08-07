@@ -51,6 +51,7 @@ Plug 'wakatime/vim-wakatime'
 Plug 'vim-syntastic/syntastic'
 Plug 'preservim/tagbar'
 Plug 'nathangrigg/vim-beancount'
+Plug 'cespare/vim-toml'
 call plug#end()
 
 " key binding
@@ -88,6 +89,7 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 let g:go_fmt_command = "goimports"
 
+syntax enable
 filetype plugin indent on
 
 set autoindent
