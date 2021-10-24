@@ -112,29 +112,6 @@ source $ZSH/oh-my-zsh.sh
 # alias
 source ~/.alias
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
-
-# starship
-eval "$(starship init zsh)"
-export PATH="/usr/local/opt/terraform@0.13/bin:$PATH"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '$HOME/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-cloud-sdk/completion.zsh.inc'; fi
-
-# starship
-export STARSHIP_CONFIG=~/.starship
-eval "$(starship init zsh)"
-
-# golang
-[[ -s "$HOME/.gvm/scripts/gvm"  ]] && source "$HOME/.gvm/scripts/gvm"
-
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
 # git with GPG
@@ -142,12 +119,7 @@ export GPG_TTY=$(tty)
 
 #gvm
 #source $HOME/.gvm/scripts/gvm
-
 export TERMINAL=alacritty
-
-# virtualenvwrapper
-export PATH="$HOME/.local/bin:$PATH"
-source /usr/local/bin/virtualenvwrapper.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
