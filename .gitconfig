@@ -3,7 +3,7 @@
 	name = liul85
 	signingkey = 160034B0219407A4
 [core]
-	editor = vim
+	editor = nvim
 	whitespace = trailing-space,space-before-tab
 [merge]
 	tool = vimdiff
