@@ -112,6 +112,10 @@ source $ZSH/oh-my-zsh.sh
 # alias
 source ~/.alias
 
+# starship
+#export STARSHIP_CONFIG=~/.starship
+#eval "$(starship init zsh)"
+
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
 # git with GPG
