@@ -1,7 +1,7 @@
 [user]
 	email = liul85@gmail.com
 	name = liul85
-	signingkey = 160034B0219407A4
+	signingkey = F84F40CFFF24F5BB
 [core]
 	editor = nvim
 	whitespace = trailing-space,space-before-tab
