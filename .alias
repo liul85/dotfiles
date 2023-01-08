@@ -11,3 +11,4 @@ alias mct='mvn clean test'
 alias mctp='mvn clean test -Pintegration'
 alias k="microk8s kubectl"
 alias kubectl="microk8s kubectl"
+alias vim=nvim
