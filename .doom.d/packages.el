@@ -50,3 +50,5 @@
 ;(unpin! t)
 
 (package! org-superstar)
+
+(package! grip-mode)

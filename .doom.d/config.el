@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Liang Liu"
+      user-mail-address "liul85@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -78,3 +78,31 @@
 (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
 
 (setq org-superstar-special-todo-items t)
+
+(defun my-weebery-is-always-greater ()
+  (let* ((banner '(""
+        " ██╗     ██╗██╗   ██╗██╗     ██╗ █████╗ ███╗   ██╗ ██████╗    ███╗   ███╗███████╗ "
+        " ██║     ██║██║   ██║██║     ██║██╔══██╗████╗  ██║██╔════╝    ████╗ ████║██╔════╝ "
+        " ██║     ██║██║   ██║██║     ██║███████║██╔██╗ ██║██║  ███╗   ██╔████╔██║█████╗   "
+        " ██║     ██║██║   ██║██║     ██║██╔══██║██║╚██╗██║██║   ██║   ██║╚██╔╝██║██╔══╝   "
+        " ███████╗██║╚██████╔╝███████╗██║██║  ██║██║ ╚████║╚██████╔╝██╗██║ ╚═╝ ██║███████╗ "
+        " ╚══════╝╚═╝ ╚═════╝ ╚══════╝╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝     ╚═╝╚══════╝ "
+        ""))
+         (longest-line (apply #'max (mapcar #'length banner))))
+    (put-text-property
+     (point)
+     (dolist (line banner (point))
+       (insert (+doom-dashboard--center
+                +doom-dashboard--width
+                (concat line (make-string (max 0 (- longest-line (length line))) 32)))
+               "\n"))
+     'face 'doom-dashboard-banner)))
+
+(setq +doom-dashboard-ascii-banner-fn #'my-weebery-is-always-greater)
+
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
+(setq ns-use-proxy-icon nil)
+(setq frame-title-format nil)
+
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
