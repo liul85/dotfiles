@@ -47,18 +47,17 @@ echo $all_files
 
 for f in $all_files
 do
-    echo "creating soft link for $f"
-    ln -sf $(pwd)/$f ~/$f
+    if [[ -L ~/$f ]]; then
+        echo "link for $f exists, skipping..."
+    else
+        echo "creating soft link for $f"
+        ln -s $(pwd)/$f ~/$f
+        echo "soft link ~/$f for $f created"
+    fi
 done
 
 if [[ $os_type == "Linux" ]]; then
     ln -sf $(pwd)/.fonts.conf ~/.fonts.conf
 fi
-
-echo -e "\n-------------------------------soft links created!-----------------------------"
-for f in $all_files
-do
-    ls -al ~/$f
-done
 
 echo -e "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Done!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
