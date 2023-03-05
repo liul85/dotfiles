@@ -106,3 +106,6 @@
 (setq frame-title-format nil)
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+(setq doom-themes-treemacs-theme "doom-colors")
+(after! treemacs
+  (treemacs-follow-mode 1))
