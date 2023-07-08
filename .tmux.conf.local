@@ -379,6 +379,9 @@ tmux_conf_update_plugins_on_reload=true
 #set -g @plugin 'tmux-plugins/tmux-continuum'
 #set -g @continuum-restore 'on'
 
+set -g @plugin 'fcsonline/tmux-thumbs'
+set -g @thumbs-key f
+set -g @thumbs-command 'echo -n {} | pbcopy'
 
 # -- custom variables ----------------------------------------------------------
 
