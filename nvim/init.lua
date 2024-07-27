@@ -347,9 +347,9 @@ require("lazy").setup({
 				if base == '.' then
 					-- if there is no current file,
 					-- proximity-sort can't do its thing
-					return 'fd --type file --follow'
+					return 'fd --type file --follow --hidden'
 				else
-					return vim.fn.printf('fd --type file --follow | proximity-sort %s', vim.fn.shellescape(vim.fn.expand('%')))
+					return vim.fn.printf('fd --type file --follow --hidden | proximity-sort %s', vim.fn.shellescape(vim.fn.expand('%')))
 				end
 			end
 			vim.api.nvim_create_user_command('Files', function(arg)
