@@ -113,8 +113,10 @@ vim.keymap.set('t', '<C-k>', '<Esc>')
 vim.keymap.set('v', '<C-h>', '<cmd>nohlsearch<cr>')
 vim.keymap.set('n', '<C-h>', '<cmd>nohlsearch<cr>')
 -- Jump to start and end of line using the home row keys
-vim.keymap.set('', 'H', '^')
-vim.keymap.set('', 'L', '$')
+vim.keymap.set('n', 'H', '^')
+vim.keymap.set('n', '<C-a>', '^')
+vim.keymap.set('n', 'L', '$')
+vim.keymap.set('n', '<C-e>', '$')
 -- Neat X clipboard integration
 -- <leader>p will paste clipboard into buffer
 -- <leader>c will copy entire buffer into clipboard
@@ -154,7 +156,6 @@ vim.keymap.set('n', '<leader>m', 'ct_')
 -- F1 is pretty close to Esc, so you probably meant Esc
 vim.keymap.set('', '<F1>', '<Esc>')
 vim.keymap.set('i', '<F1>', '<Esc>')
-
 -------------------------------------------------------------------------------
 --
 -- autocommands

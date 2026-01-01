@@ -383,6 +383,11 @@ set -g @plugin 'fcsonline/tmux-thumbs'
 set -g @thumbs-key f
 set -g @thumbs-command 'echo -n {} | pbcopy'
 
+# continuum plugin
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @continuum-restore 'on'
+
 # -- custom variables ----------------------------------------------------------
 
 # to define a custom #{foo} variable, define a POSIX shell function between the
